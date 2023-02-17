@@ -1,21 +1,13 @@
-FROM ruby:3.0.0-alpine
+FROM ruby:3.0
 
-RUN apk add --update --virtual \
-  runtime-deps \
+RUN apt-get update -qq && apt-get install -y \
   postgresql-client \
-  build-base \
   libxml2-dev \
   libxslt-dev \
   nodejs \
   yarn \
   libffi-dev \
-  readline \
-  build-base \
-  postgresql-dev \
-  sqlite-dev \
   libc-dev \
-  linux-headers \
-  readline-dev \
   file \
   imagemagick \
   git \
@@ -25,8 +17,9 @@ RUN apk add --update --virtual \
 WORKDIR /app
 COPY . /app/
 
+RUN gem cleanup
+RUN gem cleanup administrate
 ENV BUNDLE_PATH /gems
-RUN yarn install
 RUN bundle install
 
 ENTRYPOINT ["bin/rails"]

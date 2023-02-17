@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.0.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
@@ -54,10 +54,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'administrate', github: 'excid3/administrate', branch: 'jumpstart'
+# gem 'administrate', github: 'excid3/administrate', branch: 'jumpstart'
 gem 'bootstrap', '~> 4.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
-gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
+# gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
 gem 'devise_masquerade', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.13'
 gem 'friendly_id', '~> 5.3'
